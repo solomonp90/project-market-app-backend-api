@@ -11,7 +11,13 @@ class DevelopersController < ApplicationController
 
     def create
         @developer = Developer.create(dev_params)
-        render json: @developer
+        if @developer.valid?
+            payload = { user_id: @developer.id }
+            token = encode_token(payload)
+            render json: { developer: @developer ,token: token }
+        else
+            render json: { errors: @developer.errors.full_messages }, status: :not_acceptable
+        end
     end
 
     def update
@@ -28,7 +34,7 @@ class DevelopersController < ApplicationController
     private 
     
     def dev_params
-        params.permit(:first_name,:last_name,:password,:image,:experience,:skill,)
+        params.permit(:first_name,:last_name,:username,:password,:image,:experience,:skill,)
     end
 
 end 

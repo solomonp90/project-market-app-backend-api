@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_230351) do
   create_table "clients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "username"
     t.string "password_digest"
     t.string "image"
     t.string "domain"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_230351) do
   create_table "developers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "username"
     t.string "password_digest"
     t.string "image"
     t.string "experience"

@@ -9,14 +9,16 @@ require 'faker'
 
 
 # =====================================clients===========================================================================================================================================================================================================================
+
+solo = Client.create(first_name:"solomon",last_name:"pena" ,username:"solomonp90",password:"password123",image:Faker::Avatar.image,domain:Faker::IndustrySegments.industry)
 20.times do
-     Client.create(first_name:Faker::Name.first_name ,last_name:Faker::Name.last_name ,password:"password",image:Faker::Avatar.image,domain:Faker::IndustrySegments.industry)
+     Client.create(first_name:Faker::Name.first_name ,last_name:Faker::Name.last_name ,username:Faker::FunnyName.name,password:"password",image:Faker::Avatar.image,domain:Faker::IndustrySegments.industry)
 end
 
 
 # =====================================developers===========================================================================================================================================================================================================================
 20.times do
-     Developer.create(first_name:Faker::Name.first_name ,last_name:Faker::Name.last_name ,password:"password",image:Faker::Avatar.image,experience:"#{Faker::Number.within(range: 1..20)} years",skill:Faker::ProgrammingLanguage.name)
+     Developer.create(first_name:Faker::Name.first_name ,last_name:Faker::Name.last_name ,username:Faker::FunnyName.name,password:"password",image:Faker::Avatar.image,experience:"#{Faker::Number.within(range: 1..20)} years",skill:Faker::ProgrammingLanguage.name)
 end
 
 
