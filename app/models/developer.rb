@@ -1,5 +1,5 @@
 class Developer < ApplicationRecord
-    has_many :contracts
+    has_many :contracts, dependent: :destroy
     has_many :projects ,through: :contracts
     has_many :clients ,through: :projects
     has_secure_password

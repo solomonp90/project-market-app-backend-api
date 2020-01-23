@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 2020_01_09_230351) do
     t.string "password_digest"
     t.string "image"
     t.string "domain"
+    t.string "kind", default: "Client", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "contracts", force: :cascade do |t|
     t.string "signature"
+    t.string "kind", default: "Contract", null: false
     t.bigint "project_id", null: false
     t.bigint "developer_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_230351) do
     t.string "image"
     t.string "experience"
     t.string "skill"
+    t.string "kind", default: "Developer", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_230351) do
     t.string "image"
     t.string "description"
     t.string "stipulation"
+    t.string "kind", default: "Project", null: false
     t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

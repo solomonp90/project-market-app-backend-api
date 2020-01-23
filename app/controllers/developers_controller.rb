@@ -14,7 +14,8 @@ class DevelopersController < ApplicationController
         if @developer.valid?
             payload = { user_id: @developer.id }
             token = encode_token(payload)
-            render json: { developer: @developer ,token: token }
+            # render json: { developer: @developer ,token: token }
+            render json: { user: @developer, user_id: @developer.id, token: token, success: "Welcome back #{@developer.username}"} 
         else
             render json: { errors: @developer.errors.full_messages }, status: :not_acceptable
         end
@@ -22,19 +23,22 @@ class DevelopersController < ApplicationController
 
     def update
         @developer = Developer.find(params[:id])
-        render json: @developer
+        @developer.update(dev_params)
+        payload = { user_id: @developer.id }
+        token = encode_token(payload)
+        render json: { user: @developer, user_id: @developer.id, token: token, success: "Welcome back #{@developer.username}"}
     end
 
     def destroy
         @developer = Developer.find(params[:id])
-        @developer.destroy 
+        @developer.destroy() 
         render json: @developer
     end
 
     private 
     
     def dev_params
-        params.permit(:first_name,:last_name,:username,:password,:image,:experience,:skill,)
+        params.permit(:first_name,:last_name,:username,:password,:image,:experience,:skill,:kind)
     end
 
 end 

@@ -8,6 +8,8 @@ class CreateDevelopers < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :experience
       t.string :skill
+      t.string :kind, null: false, :default => 'Developer'
+
 
       t.timestamps
     end

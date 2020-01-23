@@ -7,6 +7,8 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.string :image
       t.string :domain
+      t.string :kind, null: false, :default => 'Client'
+
 
       t.timestamps
     end

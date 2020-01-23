@@ -37,6 +37,6 @@ class ClientsController < ApplicationController
 
     def client_params
         # params.require[:client].permit(:first_name,:last_name,:password,:image,:domain)
-        params.permit(:first_name,:last_name,:username,:password,:image,:domain)
+        params.permit(:first_name,:last_name,:username,:password,:image,:domain,:kind)
     end
 end

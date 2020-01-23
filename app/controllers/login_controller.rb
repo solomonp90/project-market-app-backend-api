@@ -11,7 +11,7 @@ class LoginController < ApplicationController
         elsif @developer && @developer.authenticate(params[:password])
             payload = { developer_id: @developer.id ,username: @developer.username}
             token = encode_token(payload)
-            render json: { user: @developer,user_id: @developer.id ,token: token, success: "Welcome back #{@developer.username}"}
+            render json: { user: @developer,user_id: @developer.id, token: token, success: "Welcome back #{@developer.username}"}
         else
              render json: { failure: "Login failed please enter valid credentials"}
         end
