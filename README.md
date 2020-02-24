@@ -1,25 +1,29 @@
-# README
+# WD-Market
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WD-Market is a freelancing platform where businesses and independent professionals connect and collaborate remotely.This Application allows its users to create and accept proposals based off of their user-role on the platform.
 
-Things you may want to cover:
 
-* Ruby version
+This is the backend repo for WD-Market, the frontend can be found at the following address: https://github.com/solomonp90/project-market-app-frontend-react
 
-* System dependencies
+## Languages and Framework
+**Front End**
+* React.js
+* React Router
+* React-Bootstrap
+* CSS3
 
-* Configuration
+**Back End**
+* Ruby
+* Ruby on Rails 6.0
+* JWT Authorization
 
-* Database creation
+## Installation 
+1. Clone repo and CD into the directory
+2. run `bundle install`
+3. run `rails db:create` to create your postgres database
+4. run `rails db:migrate` to bring up migrations
+5. run `rails db:seed` to seed data
+6. run `rails s` to start the server
 
-* Database initialization
+Make sure to checkout the repo for the frontend and follow the installation instructions as well.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# project-market-app-backend-api
